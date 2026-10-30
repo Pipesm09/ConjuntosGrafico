@@ -10,13 +10,14 @@ import javax.swing.JOptionPane;
  * @author ASUS
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-    
+
     private Controladora control = new Controladora();
+
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
-        
+
         initComponents();
         try {
             java.net.URL url = new java.net.URL("https://definicion.de/wp-content/uploads/2010/09/conjunto-1.png");
@@ -48,7 +49,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel3.setFont(new java.awt.Font("sansserif", 0, 48)); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(30, 41, 59));
+        jPanel3.setForeground(new java.awt.Color(30, 41, 59));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Operaciones de Conjuntos");
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -56,13 +61,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel3.setMinimumSize(new java.awt.Dimension(0, 0));
         jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(203, 213, 225));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Ingrese el tamaño para el conjunto Universal (Entre 10 y 100)");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel1.setMinimumSize(new java.awt.Dimension(0, 0));
 
-        txtTamanoUniversal.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        txtTamanoUniversal.setBackground(new java.awt.Color(255, 255, 255));
+        txtTamanoUniversal.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtTamanoUniversal.setForeground(new java.awt.Color(15, 23, 42));
         txtTamanoUniversal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtTamanoUniversal.setMinimumSize(new java.awt.Dimension(0, 0));
         txtTamanoUniversal.addActionListener(new java.awt.event.ActionListener() {
@@ -71,8 +79,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnGenerarUniverso.setBackground(new java.awt.Color(45, 55, 72));
-        btnGenerarUniverso.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        btnGenerarUniverso.setBackground(new java.awt.Color(49, 130, 206));
+        btnGenerarUniverso.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnGenerarUniverso.setForeground(new java.awt.Color(255, 255, 255));
         btnGenerarUniverso.setText("Generar Universal");
         btnGenerarUniverso.setMinimumSize(new java.awt.Dimension(0, 0));
         btnGenerarUniverso.addActionListener(new java.awt.event.ActionListener() {
@@ -88,25 +97,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(txtTamanoUniversal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnGenerarUniverso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
+                    .addComponent(txtTamanoUniversal, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGenerarUniverso, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(149, 149, 149))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(115, 115, 115)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
                 .addGap(67, 67, 67)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtTamanoUniversal, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addComponent(txtTamanoUniversal, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22)
-                .addComponent(btnGenerarUniverso, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                .addComponent(btnGenerarUniverso, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(168, 168, 168))
         );
 
@@ -137,7 +144,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
             // 1. Generar el universo a través de la controladora
             // (Nota: Si la elección de Vector/Lista la hace al final como mencionas,
-                //  aquí puedes generarlo por defecto o esperar a cambiar el tipo en la controladora)
+            //  aquí puedes generarlo por defecto o esperar a cambiar el tipo en la controladora)
             control.generarUniverso(tamano, true);
 
             // 2. Crear la siguiente pantalla pasándole la misma Controladora

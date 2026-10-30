@@ -17,6 +17,17 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     public VentanaOperaciones(Controladora control) {
         this.control = control;
         initComponents();
+        // Margen interno (Top, Left, Bottom, Right) para que el texto no quede pegado al borde
+        txtResultado.setMargin(new java.awt.Insets(15, 20, 15, 20));
+
+        txtResultado.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 16));
+
+        txtResultado.setForeground(new java.awt.Color(255, 255, 255)); // Texto blanco
+        txtResultado.setBackground(new java.awt.Color(15, 23, 42));    // Fondo azul/gris muy oscuro
+        txtResultado.setEditable(false);
+        txtResultado.setLineWrap(true);
+        txtResultado.setWrapStyleWord(true);
+        this.setLocationRelativeTo(null);
         if (control.getConjuntoAVector() != null) {
             txtConjuntoA.setText("A = " + control.getConjuntoAVector().toString());
         }
@@ -28,6 +39,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
 
     public VentanaOperaciones() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -57,29 +69,46 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         txtResultado = new javax.swing.JTextArea();
         comboRepresentacion = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
+        btnEsSubconjuntoAB = new javax.swing.JButton();
+        btnEsSubconjuntoBA = new javax.swing.JButton();
+        btnIgualdad = new javax.swing.JButton();
+        btnPertenenciaA = new javax.swing.JButton();
+        btnPertenenciaB = new javax.swing.JButton();
+        btnDisjuntos = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(30, 41, 59));
+
         txtConjuntoA.setEditable(false);
+        txtConjuntoA.setBackground(new java.awt.Color(15, 23, 42));
         txtConjuntoA.setColumns(20);
+        txtConjuntoA.setForeground(new java.awt.Color(255, 255, 255));
         txtConjuntoA.setLineWrap(true);
         txtConjuntoA.setRows(5);
         txtConjuntoA.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txtConjuntoA);
 
         txtConjuntoB.setEditable(false);
+        txtConjuntoB.setBackground(new java.awt.Color(15, 23, 42));
         txtConjuntoB.setColumns(20);
+        txtConjuntoB.setForeground(new java.awt.Color(255, 255, 255));
         txtConjuntoB.setLineWrap(true);
         txtConjuntoB.setRows(5);
         txtConjuntoB.setWrapStyleWord(true);
         jScrollPane2.setViewportView(txtConjuntoB);
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Conjunto B");
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Conjunto A");
 
+        btnUnion.setBackground(new java.awt.Color(49, 130, 206));
+        btnUnion.setForeground(new java.awt.Color(255, 255, 255));
         btnUnion.setText("A ∪ B");
         btnUnion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +116,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        btnInterseccion.setBackground(new java.awt.Color(49, 130, 206));
+        btnInterseccion.setForeground(new java.awt.Color(255, 255, 255));
         btnInterseccion.setText("A ∩ B");
         btnInterseccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,6 +125,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        btnDiferenciaAB.setBackground(new java.awt.Color(49, 130, 206));
+        btnDiferenciaAB.setForeground(new java.awt.Color(255, 255, 255));
         btnDiferenciaAB.setText("A - B");
         btnDiferenciaAB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +134,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        btnDiferenciaBA.setBackground(new java.awt.Color(49, 130, 206));
+        btnDiferenciaBA.setForeground(new java.awt.Color(255, 255, 255));
         btnDiferenciaBA.setText("B - A");
         btnDiferenciaBA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +143,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        btnDiferenciaSimetrica.setBackground(new java.awt.Color(49, 130, 206));
+        btnDiferenciaSimetrica.setForeground(new java.awt.Color(255, 255, 255));
         btnDiferenciaSimetrica.setText("A Δ B");
         btnDiferenciaSimetrica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +152,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        btnComplementoA.setBackground(new java.awt.Color(49, 130, 206));
+        btnComplementoA.setForeground(new java.awt.Color(255, 255, 255));
         btnComplementoA.setText("A'");
         btnComplementoA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +161,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        btnComplementoB.setBackground(new java.awt.Color(49, 130, 206));
+        btnComplementoB.setForeground(new java.awt.Color(255, 255, 255));
         btnComplementoB.setText("B'");
         btnComplementoB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,12 +171,17 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         txtResultado.setEditable(false);
+        txtResultado.setBackground(new java.awt.Color(15, 23, 42));
         txtResultado.setColumns(20);
+        txtResultado.setForeground(new java.awt.Color(255, 255, 255));
         txtResultado.setLineWrap(true);
         txtResultado.setRows(5);
         txtResultado.setWrapStyleWord(true);
         jScrollPane3.setViewportView(txtResultado);
 
+        comboRepresentacion.setBackground(new java.awt.Color(255, 255, 255));
+        comboRepresentacion.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        comboRepresentacion.setForeground(new java.awt.Color(15, 23, 42));
         comboRepresentacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vector", "Lista Ligada" }));
         comboRepresentacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,28 +189,79 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Representacion");
+
+        btnEsSubconjuntoAB.setBackground(new java.awt.Color(49, 130, 206));
+        btnEsSubconjuntoAB.setForeground(new java.awt.Color(255, 255, 255));
+        btnEsSubconjuntoAB.setText("A ⊆ B");
+        btnEsSubconjuntoAB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEsSubconjuntoABActionPerformed(evt);
+            }
+        });
+
+        btnEsSubconjuntoBA.setBackground(new java.awt.Color(49, 130, 206));
+        btnEsSubconjuntoBA.setForeground(new java.awt.Color(255, 255, 255));
+        btnEsSubconjuntoBA.setText("A ⊆ B");
+        btnEsSubconjuntoBA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEsSubconjuntoBAActionPerformed(evt);
+            }
+        });
+
+        btnIgualdad.setBackground(new java.awt.Color(49, 130, 206));
+        btnIgualdad.setForeground(new java.awt.Color(255, 255, 255));
+        btnIgualdad.setText("A = B");
+        btnIgualdad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIgualdadActionPerformed(evt);
+            }
+        });
+
+        btnPertenenciaA.setBackground(new java.awt.Color(49, 130, 206));
+        btnPertenenciaA.setForeground(new java.awt.Color(255, 255, 255));
+        btnPertenenciaA.setText("x ∈ A");
+        btnPertenenciaA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPertenenciaAActionPerformed(evt);
+            }
+        });
+
+        btnPertenenciaB.setBackground(new java.awt.Color(49, 130, 206));
+        btnPertenenciaB.setForeground(new java.awt.Color(255, 255, 255));
+        btnPertenenciaB.setText("x ∈ B");
+        btnPertenenciaB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPertenenciaBActionPerformed(evt);
+            }
+        });
+
+        btnDisjuntos.setBackground(new java.awt.Color(49, 130, 206));
+        btnDisjuntos.setForeground(new java.awt.Color(255, 255, 255));
+        btnDisjuntos.setText("A ∩ B = Ø");
+        btnDisjuntos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDisjuntosActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setBackground(new java.awt.Color(225, 29, 72));
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane3)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(btnUnion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnInterseccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDiferenciaAB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDiferenciaBA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDiferenciaSimetrica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnComplementoA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(56, 56, 56))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -176,7 +273,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(174, 174, 174)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(comboRepresentacion, 0, 123, Short.MAX_VALUE)
+                    .addComponent(comboRepresentacion, 0, 121, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -184,13 +281,39 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .addComponent(jScrollPane2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(181, 181, 181)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                         .addGap(95, 95, 95)))
                 .addGap(95, 95, 95))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(461, 461, 461)
-                .addComponent(btnComplementoB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(449, 449, 449))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnUnion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEsSubconjuntoAB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEsSubconjuntoBA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInterseccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDiferenciaAB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnIgualdad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDiferenciaBA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPertenenciaA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDiferenciaSimetrica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPertenenciaB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnComplementoA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDisjuntos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnComplementoB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(101, 101, 101))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,25 +326,47 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
                             .addComponent(jScrollPane1))
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(79, 79, 79)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(comboRepresentacion)
+                        .addComponent(comboRepresentacion, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
                         .addGap(92, 92, 92)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUnion, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                    .addComponent(btnInterseccion, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                    .addComponent(btnDiferenciaAB, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                    .addComponent(btnDiferenciaBA, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                    .addComponent(btnDiferenciaSimetrica, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                    .addComponent(btnComplementoA, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnInterseccion, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                        .addComponent(btnDiferenciaAB, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                        .addComponent(btnDiferenciaBA, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                        .addComponent(btnDiferenciaSimetrica, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                        .addComponent(btnComplementoA, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(1, 1, 1)
+                            .addComponent(btnComplementoB, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)))
+                    .addComponent(btnUnion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnComplementoB, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(0, 0, 0)
+                            .addComponent(btnEsSubconjuntoBA, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(0, 0, 0)
+                            .addComponent(btnIgualdad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(0, 0, 0)
+                            .addComponent(btnPertenenciaA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(0, 0, 0)
+                            .addComponent(btnPertenenciaB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(btnDisjuntos, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                            .addGap(5, 5, 5)))
+                    .addComponent(btnEsSubconjuntoAB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
         );
 
@@ -362,6 +507,172 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         txtResultado.setText(""); // Limpia el resultado previo al cambiar de estructura
     }//GEN-LAST:event_comboRepresentacionActionPerformed
 
+    private void btnEsSubconjuntoABActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsSubconjuntoABActionPerformed
+        try {
+            boolean esVector = comboRepresentacion.getSelectedItem().toString().contains("Vector");
+            boolean esSubconjunto;
+
+            if (esVector) {
+                esSubconjunto = control.getConjuntoAVector().esSubconjunto(control.getConjuntoBVector());
+            } else {
+                esSubconjunto = control.getConjuntoALista().esSubconjunto(control.getConjuntoBLista());
+            }
+
+            if (esSubconjunto) {
+                txtResultado.setText("A ⊆ B : Verdadero (A es subconjunto de B)");
+            } else {
+                txtResultado.setText("A ⊆ B : Falso (A NO es subconjunto de B)");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error al evaluar A ⊆ B: " + ex.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnEsSubconjuntoABActionPerformed
+
+    private void btnEsSubconjuntoBAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsSubconjuntoBAActionPerformed
+        try {
+            boolean esVector = comboRepresentacion.getSelectedItem().toString().contains("Vector");
+            boolean esSubconjunto;
+
+            if (esVector) {
+                esSubconjunto = control.getConjuntoBVector().esSubconjunto(control.getConjuntoAVector());
+            } else {
+                esSubconjunto = control.getConjuntoBLista().esSubconjunto(control.getConjuntoALista());
+            }
+
+            if (esSubconjunto) {
+                txtResultado.setText("B ⊆ A : Verdadero (B es subconjunto de A)");
+            } else {
+                txtResultado.setText("B ⊆ A : Falso (B NO es subconjunto de A)");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error al evaluar B ⊆ A: " + ex.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnEsSubconjuntoBAActionPerformed
+
+    private void btnIgualdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualdadActionPerformed
+        try {
+            boolean esVector = comboRepresentacion.getSelectedItem().toString().contains("Vector");
+            boolean sonIguales;
+
+            if (esVector) {
+                sonIguales = control.getConjuntoAVector().esIgual(control.getConjuntoBVector());
+            } else {
+                sonIguales = control.getConjuntoALista().esIgual(control.getConjuntoBLista());
+            }
+
+            if (sonIguales) {
+                txtResultado.setText("A = B : Verdadero (Los conjuntos son exactamente iguales)");
+            } else {
+                txtResultado.setText("A = B : Falso (Los conjuntos no son iguales)");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error al evaluar igualdad: " + ex.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnIgualdadActionPerformed
+
+    private void btnPertenenciaAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPertenenciaAActionPerformed
+        String input = JOptionPane.showInputDialog(this,
+                "Ingrese el elemento que desea buscar en el Conjunto A:",
+                "Evaluar Pertenencia (x ∈ A)", JOptionPane.QUESTION_MESSAGE);
+
+        if (input != null && !input.trim().isEmpty()) {
+            try {
+                int elemento = Integer.parseInt(input.trim());
+                boolean esVector = comboRepresentacion.getSelectedItem().toString().contains("Vector");
+                boolean pertenece;
+
+                if (esVector) {
+                    pertenece = control.getConjuntoAVector().contiene(elemento);
+                } else {
+                    pertenece = control.getConjuntoALista().contiene(elemento);
+                }
+
+                if (pertenece) {
+                    txtResultado.setText(elemento + " ∈ A : Verdadero (El elemento pertenece al Conjunto A)");
+                } else {
+                    txtResultado.setText(elemento + " ∉ A : Falso (El elemento NO pertenece al Conjunto A)");
+                }
+
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Por favor ingrese un número entero válido.",
+                        "Dato Inválido", JOptionPane.WARNING_MESSAGE);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Error al evaluar pertenencia en A: " + ex.getMessage(),
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnPertenenciaAActionPerformed
+
+    private void btnPertenenciaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPertenenciaBActionPerformed
+        String input = JOptionPane.showInputDialog(this,
+                "Ingrese el elemento que desea buscar en el Conjunto B:",
+                "Evaluar Pertenencia (x ∈ B)", JOptionPane.QUESTION_MESSAGE);
+
+        if (input != null && !input.trim().isEmpty()) {
+            try {
+                int elemento = Integer.parseInt(input.trim());
+                boolean esVector = comboRepresentacion.getSelectedItem().toString().contains("Vector");
+                boolean pertenece;
+
+                if (esVector) {
+                    pertenece = control.getConjuntoBVector().contiene(elemento);
+                } else {
+                    pertenece = control.getConjuntoBLista().contiene(elemento);
+                }
+
+                if (pertenece) {
+                    txtResultado.setText(elemento + " ∈ B : Verdadero (El elemento pertenece al Conjunto B)");
+                } else {
+                    txtResultado.setText(elemento + " ∉ B : Falso (El elemento NO pertenece al Conjunto B)");
+                }
+
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Por favor ingrese un número entero válido.",
+                        "Dato Inválido", JOptionPane.WARNING_MESSAGE);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Error al evaluar pertenencia en B: " + ex.getMessage(),
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnPertenenciaBActionPerformed
+
+    private void btnDisjuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisjuntosActionPerformed
+        try {
+            boolean esVector = comboRepresentacion.getSelectedItem().toString().contains("Vector");
+            boolean sonDisjuntos;
+
+            if (esVector) {
+                sonDisjuntos = control.getConjuntoAVector().esDisjunto(control.getConjuntoBVector());
+            } else {
+                sonDisjuntos = control.getConjuntoALista().esDisjunto(control.getConjuntoBLista());
+            }
+
+            if (sonDisjuntos) {
+                txtResultado.setText("A y B son Disjuntos : Verdadero (No comparten elementos)");
+            } else {
+                txtResultado.setText("A y B son Disjuntos : Falso (Tienen elementos en común)");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error al evaluar si son disjuntos: " + ex.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDisjuntosActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        int opcion = JOptionPane.showConfirmDialog(this,
+                "¿Está seguro de que desea salir de la aplicación?",
+                "Confirmar Salida",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+
+        if (opcion == JOptionPane.YES_OPTION) {
+            System.exit(0); // Termina completamente el proceso de la Máquina Virtual de Java (JVM)
+        }
+    }//GEN-LAST:event_btnSalirActionPerformed
+
     private void mostrarResultado(String etiqueta, ConjuntoInterface resultado) {
         if (resultado == null || resultado.getTamano() == 0) {
             txtResultado.setText(etiqueta + " = Ø (Conjunto Vacío)");
@@ -376,7 +687,14 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private javax.swing.JButton btnDiferenciaAB;
     private javax.swing.JButton btnDiferenciaBA;
     private javax.swing.JButton btnDiferenciaSimetrica;
+    private javax.swing.JButton btnDisjuntos;
+    private javax.swing.JButton btnEsSubconjuntoAB;
+    private javax.swing.JButton btnEsSubconjuntoBA;
+    private javax.swing.JButton btnIgualdad;
     private javax.swing.JButton btnInterseccion;
+    private javax.swing.JButton btnPertenenciaA;
+    private javax.swing.JButton btnPertenenciaB;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnUnion;
     private javax.swing.JComboBox<String> comboRepresentacion;
     private javax.swing.JLabel jLabel1;

@@ -48,10 +48,12 @@ public class VentanaConfiguracionConjuntos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(30, 41, 59));
         jPanel1.setMaximumSize(new java.awt.Dimension(0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(0, 0));
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(203, 213, 225));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Nota: Los números de los conjuntos deben pertenecer a este universo.");
         jLabel1.setMaximumSize(new java.awt.Dimension(0, 0));
@@ -63,13 +65,18 @@ public class VentanaConfiguracionConjuntos extends javax.swing.JFrame {
         jScrollPane1.setPreferredSize(new java.awt.Dimension(0, 0));
 
         txtUniverso.setEditable(false);
+        txtUniverso.setBackground(new java.awt.Color(15, 23, 42));
         txtUniverso.setColumns(20);
+        txtUniverso.setForeground(new java.awt.Color(255, 255, 255));
         txtUniverso.setLineWrap(true);
         txtUniverso.setRows(5);
         txtUniverso.setWrapStyleWord(true);
+        txtUniverso.setMinimumSize(new java.awt.Dimension(650, 90));
+        txtUniverso.setPreferredSize(new java.awt.Dimension(650, 90));
         jScrollPane1.setViewportView(txtUniverso);
 
-        lblElementosConjunto.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lblElementosConjunto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblElementosConjunto.setForeground(new java.awt.Color(255, 255, 255));
         lblElementosConjunto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblElementosConjunto.setText("Ingrese los elementos del conjunto A:");
         lblElementosConjunto.setMaximumSize(new java.awt.Dimension(0, 0));
@@ -80,27 +87,34 @@ public class VentanaConfiguracionConjuntos extends javax.swing.JFrame {
         jScrollPane2.setMinimumSize(new java.awt.Dimension(0, 0));
         jScrollPane2.setPreferredSize(new java.awt.Dimension(0, 0));
 
+        txtElementosA.setBackground(new java.awt.Color(255, 255, 255));
         txtElementosA.setColumns(20);
+        txtElementosA.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtElementosA.setForeground(new java.awt.Color(15, 23, 42));
         txtElementosA.setLineWrap(true);
         txtElementosA.setRows(5);
         txtElementosA.setWrapStyleWord(true);
         jScrollPane2.setViewportView(txtElementosA);
 
-        jLabel3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(203, 213, 225));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Ingrese los datos separados por comas");
         jLabel3.setMaximumSize(new java.awt.Dimension(0, 0));
         jLabel3.setMinimumSize(new java.awt.Dimension(0, 0));
         jLabel3.setPreferredSize(new java.awt.Dimension(0, 0));
 
-        jLabel4.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(148, 163, 184));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Ej: 12, 15, 23, 34");
         jLabel4.setMaximumSize(new java.awt.Dimension(0, 0));
         jLabel4.setMinimumSize(new java.awt.Dimension(0, 0));
         jLabel4.setPreferredSize(new java.awt.Dimension(0, 0));
 
-        btnGuardar.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        btnGuardar.setBackground(new java.awt.Color(49, 130, 206));
+        btnGuardar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardar.setText("Guardar conjunto A");
         btnGuardar.setMaximumSize(new java.awt.Dimension(0, 0));
         btnGuardar.setMinimumSize(new java.awt.Dimension(0, 0));
@@ -118,33 +132,33 @@ public class VentanaConfiguracionConjuntos extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(149, 149, 149)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblElementosConjunto, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblElementosConjunto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(150, 150, 150))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
-                .addGap(91, 91, 91)
+                .addGap(39, 39, 39)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89)
                 .addComponent(lblElementosConjunto, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                .addGap(98, 98, 98))
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(156, 156, 156))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
